@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pery", "Pery.csproj", "{1FAC8991-6D23-4323-8096-510EC8D34944}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FAC8991-6D23-4323-8096-510EC8D34944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAC8991-6D23-4323-8096-510EC8D34944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAC8991-6D23-4323-8096-510EC8D34944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAC8991-6D23-4323-8096-510EC8D34944}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D4DECB0-D862-4928-9656-F5369C7392D2}
+	EndGlobalSection
+EndGlobal

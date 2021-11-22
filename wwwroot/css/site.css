@@ -1,0 +1,99 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.index-pery-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.index-pery-innder-content {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #636161;
+}
+
+    .index-pery-innder-content .header {
+        height: 300px;
+        margin-top: 100px;
+    }
+
+.index-header-logo-titel {
+    margin: auto;
+    text-align: center;
+    font-size: 6em;
+    font-family: fangsong;
+}
+
+.index-header-logo-description {
+    margin: auto;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Dancing Script', cursive;
+}
+
+.index-content-container {
+    padding: 20px;
+}
+
+.index-content-inner-container {
+    border: 1px solid #636161;
+    height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .index-header-logo-titel {
+        font-size: 4em;
+    }
+
+    .index-header-logo-description {
+        font-size: 2em;
+    }
+}

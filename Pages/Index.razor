@@ -1,0 +1,89 @@
+﻿@page "/"
+
+@using  System.Globalization
+@inject NavigationManager Nav
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
+
+<p>
+
+    <label>
+        Select your locale:
+        <select @bind="Culture">
+            @foreach (var culture in supportedCultures)
+            {
+                <option value="@culture">@culture.DisplayName</option>
+            }
+        </select>
+    </label>
+</p>
+<br />
+<div class="index-pery-content">
+    <div class="index-pery-innder-content">
+        <div class="container">
+            <div class="row header">
+                <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                    <p class="index-header-logo-titel">PERY</p>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                    <p class="index-header-logo-description">@(localizer["pery-description"])</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xl-4 col-lg-4 index-content-container">
+                    <div class="index-content-inner-container">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xl-4 col-lg-4 index-content-container">
+                    <div class="index-content-inner-container">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xl-4 col-lg-4 index-content-container">
+                    <div class="index-content-inner-container">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+@code
+{
+
+    private CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("en-US"),
+        new CultureInfo("de-DE"),
+    };
+
+    protected override void OnInitialized()
+    {
+        Culture = CultureInfo.CurrentCulture;
+    }
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var uri = new Uri(Nav.Uri)
+                    .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+                var cultureEscaped = Uri.EscapeDataString(value.Name);
+                var uriEscaped = Uri.EscapeDataString(uri);
+
+                Nav.NavigateTo(
+                    $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+                    forceLoad: true);
+            }
+        }
+    }
+}

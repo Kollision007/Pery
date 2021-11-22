@@ -87,8 +87,20 @@ a, .btn-link {
     height: 50px;
 }
 
-@media screen and (max-width: 768px) {
 
+.collection-description {
+    font-size: 1.2em;
+}
+
+.collection-description {
+    font-size: 0.7em;
+}
+
+
+
+
+/* Media Screen*/
+@media screen and (max-width: 768px) {
     .index-header-logo-titel {
         font-size: 4em;
     }

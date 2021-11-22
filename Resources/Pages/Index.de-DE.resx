@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="collection-gold-description" xml:space="preserve">
+    <value>Gold Beschreibung</value>
+  </data>
+  <data name="collection-gold-title" xml:space="preserve">
+    <value>Gold</value>
+  </data>
+  <data name="collection-silver-description" xml:space="preserve">
+    <value>Silver Beschreibung</value>
+  </data>
+  <data name="collection-silver-title" xml:space="preserve">
+    <value>Silver</value>
+  </data>
+  <data name="collection-unique-description" xml:space="preserve">
+    <value>Unique Beschreibung</value>
+  </data>
+  <data name="collection-unique-title" xml:space="preserve">
+    <value>Unikat</value>
+  </data>
   <data name="pery-description" xml:space="preserve">
     <value>Deine Leidenschaft ist unsere Obsession</value>
   </data>

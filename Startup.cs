@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pery.Data;
+using Pery.Data.Servics;
 
 namespace Pery
 {
@@ -23,6 +24,7 @@ namespace Pery
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<AppPeryService>();
             services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
             //var supportedCultures = new List<CultureInfo> { new CultureInfo("en-EN"), new CultureInfo("de-DE") };
             //services.Configure<RequestLocalizationOptions>(options =>

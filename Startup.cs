@@ -27,14 +27,6 @@ namespace Pery
             services.AddSingleton<AppPeryService>();
             services.AddSingleton<AppStaticDb>();
             services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
-            //var supportedCultures = new List<CultureInfo> { new CultureInfo("en-EN"), new CultureInfo("de-DE") };
-            //services.Configure<RequestLocalizationOptions>(options =>
-            //{
-            //    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("de-DE");
-            //    options.SupportedUICultures = supportedCultures;
-            //});
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

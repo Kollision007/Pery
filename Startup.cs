@@ -25,6 +25,7 @@ namespace Pery
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<AppPeryService>();
+            services.AddSingleton<AppStaticDb>();
             services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
             //var supportedCultures = new List<CultureInfo> { new CultureInfo("en-EN"), new CultureInfo("de-DE") };
             //services.Configure<RequestLocalizationOptions>(options =>

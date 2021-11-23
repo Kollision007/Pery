@@ -1,0 +1,22 @@
+﻿@page "/products/{Id:int}"
+@inject NavigationManager NavigationManager
+@using Pery.Data.Model;
+
+@inject Pery.Data.Servics.AppPeryService CS
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
+
+<h3>Products</h3>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+
+
+    private List<Product> productList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        productList = await CS.GetProductAsync(Id);
+    }
+}

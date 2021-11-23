@@ -5,35 +5,31 @@
 
 @using Pery.Data.Model;
 
-<div class="index-pery-content">
-    <div class="index-pery-innder-content">
-        <div class="container">
-            <div class="row header">
-                <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
-                    <p class="index-header-logo-titel">PERY</p>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
-                    <p class="index-header-logo-description">@(localizer["pery-description"])</p>
-                </div>
-            </div>
-            <div class="row">
-                @foreach (var cl in collectionlist)
-                {
-                    <div class="col-md-12 col-sm-4 col-xl-4 col-lg-4 index-content-container">
-                        <div class="index-content-inner-container">
-                            <p class="collection-titel">@(localizer[cl.CollectionTitel])</p>
-                            <p class="collection-description">@(localizer[cl.CollectionDescription])</p>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
+<div class="row header">
+    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+        <p class="index-header-logo-titel">PERY</p>
     </div>
+    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+        <p class="index-header-logo-description">@(localizer["pery-description"])</p>
+    </div>
+</div>
+<div class="row">
+    @foreach (var cl in collectionlist)
+    {
+        <div class="col-md-12 col-sm-4 col-xl-4 col-lg-4 index-content-container">
+            <NavLink class="nav-link" href="@cl.Url">
+                <div class="index-content-inner-container">
+                    <p class="collection-titel">@(localizer[cl.CollectionTitel])</p>
+                    <p class="collection-description">@(localizer[cl.CollectionDescription])</p>
+                </div>
+            </NavLink>
+        </div>
+    }
 </div>
 
 @code
 {
-    private CollectionViewModel[] collectionlist;
+    private List<CollectionViewModel> collectionlist;
 
     protected override async Task OnInitializedAsync()
     {

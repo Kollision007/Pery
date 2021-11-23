@@ -101,6 +101,7 @@ namespace Pery.Data
         {
             CollectionViewModel selected = collectionList.FirstOrDefault<CollectionViewModel>(s => s.Id == collectionViewMode.Id);
 
+
         }
 
     }

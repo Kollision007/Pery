@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Pery.Data
 {
     public class AppStaticDb
     {
+        private static string _filePath = "";
+
         private static List<CollectionViewModel> collectionList;
 
         public AppStaticDb()
@@ -115,7 +119,6 @@ namespace Pery.Data
             collectionList.Remove(collectionViewMode);
         }
 
-
         public static List<Product> GetProductsByCollectionID(int collectionId)
         {
             return collectionList.Where(s => s.Id == collectionId).SelectMany(x => x.Product).ToList<Product>(); ;
@@ -138,6 +141,16 @@ namespace Pery.Data
 
         }
 
+        private static object Read()
+        {
+            string cur = Directory.GetCurrentDirectory();
+
+            return JsonConvert.DeserializeObject<object>(File.ReadAllText(_filePath));
+        }
+        private void Write(object model)
+        {
+            File.WriteAllText(_filePath, JsonConvert.SerializeObject(model));
+        }
     }
 }
 

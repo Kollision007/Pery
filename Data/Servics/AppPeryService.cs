@@ -21,7 +21,6 @@ namespace Pery.Data.Servics
             AppStaticDb.AddCollection(collectionViewModel);
         }
 
-
         public Task<List<Product>> GetProductAsync(int collectionID)
         {
             return Task.FromResult(AppStaticDb.GetProductsByCollectionID(collectionID));

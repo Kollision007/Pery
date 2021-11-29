@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pery.Data;
 using Pery.Data.Servics;
+using System;
 
 namespace Pery
 {
@@ -27,6 +28,14 @@ namespace Pery
             services.AddSingleton<AppPeryService>();
             services.AddSingleton<AppStaticDb>();
             services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromHours(2);
+                options.Cookie.HttpOnly = false;
+                options.Cookie.IsEssential = true;
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

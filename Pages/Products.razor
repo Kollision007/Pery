@@ -6,20 +6,20 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
 
 
-<div class="center">
-    <div class="slider">
+
+
+<div class="">
+    <div class="">
         <ul>
             @foreach (Product product in productList)
             {
-                <li>
-                    <img src="@product.ImagesSrc" />
-                </li>
+            <li>
+                <img src="@product.ImagesSrc" />
+            </li>
             }
         </ul>
     </div>
 </div>
-
-
 
 @code {
     [Parameter]
@@ -29,6 +29,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        productList = await CS.GetProductAsync(Id);
+        productList = await CS.GetProducts(Id);
+
+
+
     }
 }

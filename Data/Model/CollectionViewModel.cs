@@ -46,7 +46,4 @@ namespace Pery.Data.Model
             set { products = value; }
         }
     }
-
-
-
 }

@@ -29,13 +29,17 @@ namespace Pery.Data
                     Id=1,
                     CollectionTitel = "collection-gold-title",
                     CollectionDescription ="collection-gold-description",
-                     Product = new List<Product>(){ new Product()
+                    Product = new List<Product>()
                     {
-                        Id = 1,
-                        CollectionId=1,
-                        ProductName =$"products-{1}",
-                        Description = ""
-                    } }
+                        new Product()
+                        {
+                            Id = 1,
+                            CollectionId=1,
+                            ProductName =$"products-{1}",
+                            Description = "",
+                            ImagesSrc="https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80"
+                        }
+                    }
                 },
                 new CollectionViewModel()
                 {
@@ -47,7 +51,8 @@ namespace Pery.Data
                         Id = 2,
                         CollectionId=2,
                         ProductName =$"products-{2}",
-                        Description = ""
+                        Description = "",
+                        ImagesSrc = "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
                     } }
                 },
                 new CollectionViewModel()
@@ -60,7 +65,36 @@ namespace Pery.Data
                         Id = 3,
                         CollectionId=3,
                         ProductName =$"products-{3}",
-                        Description = ""
+                        Description = "",
+                        ImagesSrc = "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    } }
+                },
+                new CollectionViewModel()
+                {
+                    Id=4,
+                    CollectionTitel = "collection-unique-title",
+                    CollectionDescription ="collection-gold-description",
+                    Product = new List<Product>(){ new Product()
+                    {
+                        Id = 4,
+                        CollectionId=4,
+                        ProductName =$"products-{3}",
+                        Description = "",
+                        ImagesSrc = "https://images.unsplash.com/reserve/HgZuGu3gSD6db21T3lxm_San%20Zenone.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+                    } }
+                },
+                new CollectionViewModel()
+                {
+                    Id=4,
+                    CollectionTitel = "collection-unique-title",
+                    CollectionDescription ="collection-gold-description",
+                    Product = new List<Product>(){ new Product()
+                    {
+                        Id = 4,
+                        CollectionId=4,
+                        ProductName =$"products-{3}",
+                        Description = "",
+                        ImagesSrc = "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     } }
                 }
             };

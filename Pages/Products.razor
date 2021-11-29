@@ -5,13 +5,25 @@
 @inject Pery.Data.Servics.AppPeryService CS
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
 
-<h3>Products</h3>
+
+<div class="center">
+    <div class="slider">
+        <ul>
+            @foreach (Product product in productList)
+            {
+                <li>
+                    <img src="@product.TitelImagesSrc" />
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
 
 @code {
     [Parameter]
     public int Id { get; set; }
-
-
 
     private List<Product> productList;
 

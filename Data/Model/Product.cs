@@ -9,7 +9,7 @@ namespace Pery.Data.Model
     {
         private int id;
         private List<Guid> categoryIds;
-        private string productName;
+        private string name;
         private int collectionid;
         private string description;
         private string imageSrc;
@@ -26,10 +26,10 @@ namespace Pery.Data.Model
             set { collectionid = value; }
         }
 
-        public string ProductName
+        public string Name
         {
-            get { return productName; }
-            set { productName = value; }
+            get { return name; }
+            set { name = value; }
         }
 
         public string Description

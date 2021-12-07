@@ -30,7 +30,7 @@ namespace Pery.Data.Model
             set { id = value; }
         }
 
-        public string ProductName
+        public string Name
         {
             get { return productName; }
             set { productName = value; }

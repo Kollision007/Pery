@@ -1,0 +1,56 @@
+﻿@page "/category-manager-table"
+
+@inject Pery.Data.Servics.AppPeryService CS
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
+
+@using Pery.Data.Model;
+
+
+<table class="table">
+    <caption>List of users</caption>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Category category in categoryList)
+        {
+            <tr>
+                <td>
+                    <img src="@category.ImagesSrc" style="height:100px;" />
+                </td>
+                <td>
+                    <InputText @bind-Value="category.Name"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="category.Description"></InputText>
+                </td>
+                <td>
+                    <NavLink class="nav-link" href="category-manager-Edit"></NavLink>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@code
+{
+    private List<Category> categoryList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        categoryList = await CS.GetCategorys();
+
+        if (categoryList == null)
+        {
+            categoryList = new List<Category>();
+        }
+
+
+    }
+}

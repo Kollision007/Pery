@@ -16,10 +16,16 @@
     <title>Pery</title>
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    @*
+        <link href="Pery.styles.css" rel="stylesheet" />
+
+    *@
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <link href="css/site.css" rel="stylesheet" />
-    <link href="Pery.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
 </head>
-<body>
+<body class="is-preload">
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
     <div id="blazor-error-ui">
@@ -158,11 +164,48 @@
                 moveLeft();
             });
 
+          //  showHeader();
+            //setTimeout(function () {
+            //    showContent();
+            //}, 500);
+
+
         });
+        //function showHeader() {
+        //    setTimeout(function () {
+        //        $('.indexcont').animate({ opacity: 1 }, 500);
+        //    }, 500);
 
-        /* Mamun khandaker */
+        //    //var $newdiv1 = $("<div class='index-backgroundimage'></div>"),
+        //    //    newdiv2 = document.createElement("div"),
+        //    //    existingdiv1 = document.getElementsByClassName("index-pery-innder-content");
+        //    debugger;
+        //    $("#TheIndexContent").prepend("<div class='index-backgroundimage'></div>");
+        //    $('.index-backgroundimage').animate({ opacity: 1 }, 2000);
+
+        //    //setTimeout(function () {
+        //    //    $('.index-backgroundimage').animate({ opacity: 1 }, 2000);
+        //    //}, 2000);
+        //}
+            //function showContent() {
+            //    debugger;
+            //    setTimeout(function () {
+            //        showBackground();
+            //    }, 500);
+            //}
+            //function showBackground() {
+            //    $('.index-backgroundimage').animate({ opacity: 1 }, 1500);
+            //}
+
+
+
+
     </script>
-
+    <script src="~/js/breakpoints.min.js"></script>
+    <script src="~/js/browser.min.js"></script>
+    <script src="~/js/breakpoints.min.js"></script>
+    <script src="~/js/util.js"></script>
+    <script src="~/js/main.js"></script>
 </body>
 </html>
 

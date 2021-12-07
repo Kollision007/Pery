@@ -3,7 +3,7 @@
 @inject NavigationManager Nav
 
 
-<select @bind="Culture">
+<select @bind="Culture" class="culture" id="culturselect" name="culturselect" title="CUUI">
     @foreach (var culture in supportedCultures)
     {
         <option value="@culture">@culture.DisplayName</option>

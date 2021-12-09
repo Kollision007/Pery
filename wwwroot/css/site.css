@@ -1,7 +1,7 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/*@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');*/
 
-html, body {
+/*html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100%;
 }
@@ -47,6 +47,37 @@ a, .btn-link {
         top: 0.5rem;
     }
 
+.index-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.index-flex-item{
+    flex-grow:3;
+    flex-shrink:4;
+    flex-basis:auto;
+    background-color:#6e6e6e;
+    opacity:0.8;
+}
+.nav-link{
+    padding:unset;
+}
+
+.indexcont {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 200;
+}
+.index-backgroundimage {
+    z-index: 100;
+    background-image: url("../Images/pixabay/peryback.JPG");
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95%;
+}
 .index-pery-content {
     width: 100%;
     height: 100%;
@@ -76,10 +107,12 @@ a, .btn-link {
     text-align: center;
     font-size: 4em;
     font-family: 'Dancing Script', cursive;
+    text-shadow:1px 1px #ffffff;
 }
 
 .index-content-container {
     padding: 20px;
+    text-align:center;
 }
 
 .index-content-inner-container {
@@ -88,25 +121,40 @@ a, .btn-link {
 }
 
 
-.collection-description {
+.collection-titel {
     font-size: 1.2em;
+    color: black;
+    font-weight:bolder;
 }
 
 .collection-description {
     font-size: 0.7em;
+    color: black;
+    font-weight: bolder;
 }
-
+.collection-description, .collection-titel {
+    margin-bottom: 0 !important;
+}*/
 
 
 
 /* Media Screen*/
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     .index-header-logo-titel {
         font-size: 4em;
     }
 
     .index-header-logo-description {
         font-size: 2em;
+    }
+    .index-title {
+        margin-bottom: -72px;
+    }
+    .index-description {
+        margin-bottom: 50px;
+    }
+    .header{
+        margin-bottom:-75px;
     }
 }
 
@@ -177,11 +225,11 @@ ul {
     100% {
         transform: translate(0, 0) rotate(360deg);
     }
-}
+}*/
 
 /* Required styles for the slider */
 
-.slider {
+/*.slider {
     position: relative;
     overflow: hidden;
     transition: 0.3s;
@@ -275,16 +323,87 @@ ul {
 
         .autoPlay .chkbox:checked + label {
             background: rgba(0, 0, 0, .7);
-        }
+        }*/
 
 /* Make it adaptive to any layout */
 
-@media (max-width: 1200px) {
+/*@media (max-width: 1200px) {
     .center {
         width: 100%;
         padding: 0 15px;
     }
-}
+}*/
 
 /* Required styles for the slider */
 
+.culture {
+
+    text-align: -webkit-center !important;
+}
+
+#bg {
+    background-image: url(https://cdn.pixabay.com/photo/2014/04/05/11/40/diamond-316610_960_720.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cut-diamond {
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+    border-width: 0 25px 25px 25px;
+    height: 0;
+    width: 50px;
+    box-sizing: content-box;
+    position: relative;
+    margin: 0 0 69px 0;
+}
+
+    #cut-diamond:after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: -26px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent;
+        border-width: 70px 50px 0 50px;
+    }
+    .row{
+        margin-top:-15px;
+    }
+/*.navpadding {
+    padding-top:15px;
+}*/
+@media screen and (max-width: 480px){
+    .culture {
+        width: 190px;
+        margin-top: -5px;
+        margin-left: -10px;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 736px) {
+    .culture {
+        width: 190px;
+        margin-top: -20px;
+    }
+}
+@media screen and (min-width: 736px) and (max-width: 992px) {
+    .culture {
+        width: 250px;
+        margin-top: -40px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .culture {
+        width: 300px;
+        margin-top: -30px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1680px) {
+    .culture {
+        width: 300px;
+        margin-top: -35px;
+    }
+}

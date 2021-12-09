@@ -135,6 +135,18 @@
   <data name="collection-unique-title" xml:space="preserve">
     <value>Unikat</value>
   </data>
+  <data name="pery-Cat-AA" xml:space="preserve">
+    <value>Bracelets &amp; Bangles</value>
+  </data>
+  <data name="pery-Cat-Ketten" xml:space="preserve">
+    <value>Necklaces, necklaces &amp; pendants</value>
+  </data>
+  <data name="pery-Cat-Ohrringe" xml:space="preserve">
+    <value>Earrings</value>
+  </data>
+  <data name="pery-Cat-Ringe" xml:space="preserve">
+    <value>Rings</value>
+  </data>
   <data name="pery-description" xml:space="preserve">
     <value>Your passion is our obsession</value>
   </data>

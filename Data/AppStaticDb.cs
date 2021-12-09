@@ -233,7 +233,7 @@ namespace Pery.Data
             }
         }
 
-        public static bool UpdateCategroy(Category cat)
+        public static bool UpdateOrCreateCategroy(Category cat)
         {
             try
             {
@@ -246,8 +246,13 @@ namespace Pery.Data
                     updatePro.ImagesSrc = cat.ImagesSrc;
                     updatePro.Description = cat.Description;
                     updatePro.Name = cat.Name;
+                    WriteCategory(category);
                 }
-                WriteCategory(category);
+                else 
+                {
+                    AddCategory(cat);
+                }
+                
                 return true;
             }
             catch (System.Exception)
@@ -272,7 +277,7 @@ namespace Pery.Data
         private static void WriteCategory(List<Category> yCategory)
         {
             InitCategory();
-            File.WriteAllText(_fileProductsPath, JsonConvert.SerializeObject(yCategory));
+            File.WriteAllText(_fileCategoryPath, JsonConvert.SerializeObject(yCategory));
         }
 
         #endregion

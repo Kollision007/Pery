@@ -24,7 +24,6 @@ namespace Pery.Data.Servics
             return Task.FromResult(AppStaticDb.GetProductsByCollectionID(collectionID));
         }
 
-
         #region Category
 
         public Task<List<Category>> GetCategorys()
@@ -44,7 +43,7 @@ namespace Pery.Data.Servics
 
         public Task<bool> UpdateCategorys(Category cat)
         {
-            return Task.FromResult(AppStaticDb.UpdateCategroy(cat));
+            return Task.FromResult(AppStaticDb.UpdateOrCreateCategroy(cat));
         }
 
         #endregion
@@ -55,7 +54,6 @@ namespace Pery.Data.Servics
         {
             return Task.FromResult(AppStaticDb.ReadProducts());
         }
-
 
         public Task<List<Product>> GetProducts(int categoryIds)
         {

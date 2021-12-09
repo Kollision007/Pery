@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pery.Data.Model
 {
-
     public class Category
     {
         private Guid id;
@@ -30,18 +27,22 @@ namespace Pery.Data.Model
             set { id = value; }
         }
 
+        [Required]
+        [StringLength(10, ErrorMessage = "Name is too long.")]
         public string Name
         {
             get { return productName; }
             set { productName = value; }
         }
-
+        [Required]
+        [StringLength(10, ErrorMessage = "Name is too long.")]
         public string Description
         {
             get { return description; }
             set { description = value; }
         }
-
+        [Required]
+        [StringLength(10, ErrorMessage = "Name is too long.")]
         public string ImagesSrc
         {
             get

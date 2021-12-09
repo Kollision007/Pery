@@ -1,45 +1,62 @@
 ﻿@page "/category-manager-table"
 
+
 @inject Pery.Data.Servics.AppPeryService CS
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Index> localizer
 
 @using Pery.Data.Model;
 
-
-<table class="table">
-    <caption>List of users</caption>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Category category in categoryList)
-        {
+<EditForm EditContext="editContext" OnValidSubmit="@SaveCateory">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <a class="btn btn-success" @onclick="NewCateory">neu</a>
+    <input type="submit" class="btn btn-success" value="Save" />
+    <table class="table">
+        <caption>List of users</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Activ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Category category in categoryList)
+            {
             <tr>
                 <td>
-                    <img src="@category.ImagesSrc" style="height:100px;" />
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="@category.ImagesSrc" style="height:40px;" />
+                                </td>
+                                <td>
+                                    <InputText @bind-Value="category.ImagesSrc"></InputText>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </td>
                 <td>
                     <InputText @bind-Value="category.Name"></InputText>
                 </td>
                 <td>
-                    <InputText @bind-Value="category.Description"></InputText>
+                    <InputTextArea @bind-Value="@category.Description" rows="4"></InputTextArea>
                 </td>
                 <td>
-                    <NavLink class="nav-link" href="category-manager-Edit"></NavLink>
+                    <InputCheckbox @bind-Value="@category.Active"></InputCheckbox>
                 </td>
             </tr>
-        }
-
-    </tbody>
-</table>
+            }
+        </tbody>
+    </table>
+</EditForm>
 
 @code
-{
+{ 
+    private EditContext? editContext;
     private List<Category> categoryList;
 
     protected override async Task OnInitializedAsync()
@@ -50,7 +67,38 @@
         {
             categoryList = new List<Category>();
         }
+        editContext = new(categoryList);
+    }
 
+    private void NewCateory()
+    {
+        try
+        {
+            categoryList.Add(new Category());
+            StateHasChanged();
+        }
+        catch (Exception)
+        {
 
+            throw;
+        }
+
+    }
+
+    private void SaveCateory()
+    {
+        try
+        {
+            foreach (Category cat in categoryList)
+            {
+                CS.UpdateCategorys(cat);
+            }
+
+            StateHasChanged();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
 }

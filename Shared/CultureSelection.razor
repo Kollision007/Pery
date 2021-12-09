@@ -6,7 +6,20 @@
 <select @bind="Culture" class="culture" id="culturselect" name="culturselect" title="CUUI">
     @foreach (var culture in supportedCultures)
     {
-        <option value="@culture">@culture.DisplayName</option>
+    <option value="@culture">
+        @culture.DisplayName
+        @culture.Name
+
+        @if (culture.Name == "en-US")
+        {
+            <img style="height:20px;" src="https://www.google.com/search?q=deutschland+flagge&tbm=isch&source=iu&ictx=1&fir=AxGulA5YpEQGmM%252CPBS-FvzvtUXKqM%252C%252Fm%252F0j9x1%253ByVr4OpJC-fxb3M%252CCgI7xHQIjjPK_M%252C_%253BJv5TMunsRCbZBM%252CPU8FGWUJFx9LQM%252C_%253BWSHp7k5JI53cGM%252CBnmK_khDyIYNQM%252C_%253BDO37Z9TmL30NEM%252CxUdqHa_uDSgMnM%252C_%253BLqKZg-JPgGDUDM%252CEDKalOvjewkbTM%252C_&vet=1&usg=AI4_-kRwfUv0ckBD7sW-3WOWPAtKRigDiw&sa=X&ved=2ahUKEwi69oGRw9f0AhUvSfEDHe2zADcQ_B16BAhAEAE#imgrc=AxGulA5YpEQGmM" />
+        }
+        else if (culture.Name == "de-DE")
+        {
+            <img style="height:20px;" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nationalflaggen.de%2Fflagge-grossbritannien.html&psig=AOvVaw0jfXk4NrEMctClg-00ZISm&ust=1639167062803000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMjw3aXD1_QCFQAAAAAdAAAAABAF" />
+        }
+
+    </option>
     }
 </select>
 @code {
